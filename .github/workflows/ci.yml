@@ -10,7 +10,7 @@ jobs:
       contents: read
     steps:
       - name: Verify permissions
-        if: ${{ inputs.attestation == 'true' && !env.ACTIONS_ID_TOKEN_REQUEST_URL }}
+        if: ${{ !env.ACTIONS_ID_TOKEN_REQUEST_URL }}
         run: |
           echo "You passed attestation: true but did not set id-token: write and attestations: writes permissions in your workflow."
           echo "Please add these permissions to your workflow. See https://github.com/grafana/plugin-actions#attestation"
