@@ -13,7 +13,7 @@ jobs:
   release:
     permissions:
       id-token: write
-      # contents: write
+      contents: write
       attestations: write
     runs-on: ubuntu-latest
     steps:
