@@ -15,8 +15,8 @@ permissions:
 jobs:
   release:
     permissions:
-      contents: write
       id-token: write
+      contents: read
       attestations: write
     runs-on: ubuntu-latest
     steps:
