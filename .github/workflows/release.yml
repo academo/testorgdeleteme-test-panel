@@ -32,4 +32,3 @@ jobs:
         uses: actions/attest-build-provenance@v2
         with:
           subject-path: ${{ steps.build.outputs.archive }}
-          subject-sha1: ${{ steps.build.outputs.archive-sha1sum }}
