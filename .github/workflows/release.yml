@@ -11,7 +11,6 @@ permissions:
   id-token: write
   contents: read
   attestations: write
-  read-all: write
 
 jobs:
   release:
