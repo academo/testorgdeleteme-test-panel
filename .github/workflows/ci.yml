@@ -1,7 +1,7 @@
 name: Permission Check
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   check_permissions:
