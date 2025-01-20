@@ -4,10 +4,16 @@ name: Release
 
 on:
   push:
-    tags:
-      - 'v*' # Run workflow on version tags, e.g. v1.0.0.
+    branches:
+      - main
+    # tags:
+    #   - 'v*' # Run workflow on version tags, e.g. v1.0.0.
 
-permissions: read-all
+permissions:
+  id-token: write
+  contents: read
+  attestations: write
+  read-all: write
 
 jobs:
   release:
@@ -24,3 +30,5 @@ jobs:
         #policy_token: $
         # Usage of GRAFANA_API_KEY is deprecated, prefer `policy_token` option above
         #grafana_token: $
+      - run: |
+          ls -la
