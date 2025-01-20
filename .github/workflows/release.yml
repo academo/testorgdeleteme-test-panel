@@ -12,9 +12,9 @@ permissions: read-all
 jobs:
   release:
     permissions:
-      id-token: write
+      # id-token: write
       contents: write
-      attestations: write
+      # attestations: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
           #policy_token: $
           # Usage of GRAFANA_API_KEY is deprecated, prefer `policy_token` option above
           #grafana_token: $
-          attestation: true
+          # attestation: true
       # - name: Generate artifact attestation
       #   uses: actions/attest-build-provenance@v1
       #   with:
