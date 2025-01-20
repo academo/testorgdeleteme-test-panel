@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      id-token: write
     steps:
       - name: Verify permissions
         if: ${{ !env.ACTIONS_ID_TOKEN_REQUEST_URL }}
