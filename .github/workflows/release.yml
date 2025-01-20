@@ -20,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: grafana/plugin-actions/build-plugin@main
+        id: build
         # Uncomment to enable plugin signing
         # (For more info on how to generate the access policy token see https://grafana.com/developers/plugin-tools/publish-a-plugin/sign-a-plugin#generate-an-access-policy-token)
         #with:
@@ -27,5 +28,8 @@ jobs:
         #policy_token: $
         # Usage of GRAFANA_API_KEY is deprecated, prefer `policy_token` option above
         #grafana_token: $
-      - run: |
-          ls -la
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: ${{ steps.build.outputs.archive }}
+          subject-sha1: ${{ steps.build.outputs.archive-sha1sum }}
