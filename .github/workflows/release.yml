@@ -12,7 +12,7 @@ permissions: read-all
 jobs:
   release:
     permissions:
-      id-token: write
+      # id-token: write
       contents: write
       attestations: write
     runs-on: ubuntu-latest
